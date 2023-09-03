@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String num = '0';
+  String num = '1';
   bool next=false;
   bool previous=false;
 
@@ -97,7 +97,11 @@ class _HomePageState extends State<HomePage> {
               onTap: (){
                 setState(() {
                   previous = true;
+                  numq--;
                   next = false;
+                  if(numq == -1){
+                    numq+=1;
+                  }
                 });
               },
               borderRadius: BorderRadius.circular(40),
@@ -132,6 +136,10 @@ class _HomePageState extends State<HomePage> {
                 setState(() {
                   next = true;
                   previous = false;
+                  numq++;
+                  if(numq == questionList.length){
+                    numq-=1;
+                  }
                 });
               },
               borderRadius: BorderRadius.circular(40),
