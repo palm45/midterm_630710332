@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String num = '1';
+  var num = '1';
   bool next=false;
   bool previous=false;
 
